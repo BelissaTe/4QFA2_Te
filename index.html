@@ -1,0 +1,61 @@
+<html>
+
+<label for="number1"> Enter Number 1</label></br>
+
+<input type="number" id="number1" name="number1"></br>
+<label for="number2"> Enter Number 2</label></br>
+
+<input type="number" id="number2" name="number2"></br></br>
+
+
+<button onclick="checkNum()">Calculate</button>
+</br><br/>
+
+<div id="table"></div>
+
+
+
+<script>
+
+  function checkNum() {
+
+    var num1, num2;
+
+    num1 = parseInt(document.getElementById("number1").value);
+    num2 = parseInt(document.getElementById("number2").value);
+
+    if ((num1 < 2) || (num1 > num2)) {
+      alert("Number 1 must not be lesser value of 2 and must be lower than Number 2");
+
+    }
+    else if (num2 > 10) {
+      alert("Number 2 must not exceed value of 10");
+
+    }
+    else {
+      table();
+    }
+
+  }
+  
+
+  function table() {
+    const tableContainer = document.getElementById("table")
+    tableContainer.innerHTML = ""
+    var v, y, x, z;
+    x = document.getElementById("number1").value;
+    z = parseInt(document.getElementById("number2").value);
+    for (v = 1; v <= 10; v++) {
+      for (y = x; y <= z; y++) {
+        product = v * y;
+        tableContainer.innerHTML += (v + "x" + y + "=" + product + "        ");
+      }
+      tableContainer.innerHTML = tableContainer.innerHTML + ("<br/>");
+    }
+  }
+
+</script>
+
+
+
+</html>
